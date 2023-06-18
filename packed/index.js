@@ -36,7 +36,11 @@ const cache = __importStar(__nccwpck_require__(7799));
 const core = __importStar(__nccwpck_require__(2186));
 async function run() {
     const CACHE_DIR = "/tmp/work";
-    const CACHE_KEY = crypto.createHash("sha256").update("abc").digest("hex");
+    const CACHE_KEY = crypto
+        .createHash("sha256")
+        .update("abc")
+        .digest("hex")
+        .substring(0, 16);
     core.info(`CACHE_DIR=${CACHE_DIR}`);
     core.info(`CACHE_KEY=${CACHE_KEY}`);
     const CACHE_PATHS = [CACHE_DIR];

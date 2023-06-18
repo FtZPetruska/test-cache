@@ -6,7 +6,11 @@ import * as core from "@actions/core";
 
 async function run() {
   const CACHE_DIR = "/tmp/work";
-  const CACHE_KEY = crypto.createHash("sha256").update("abc").digest("hex");
+  const CACHE_KEY = crypto
+    .createHash("sha256")
+    .update("abc")
+    .digest("hex")
+    .substring(0, 16);
 
   core.info(`CACHE_DIR=${CACHE_DIR}`);
   core.info(`CACHE_KEY=${CACHE_KEY}`);

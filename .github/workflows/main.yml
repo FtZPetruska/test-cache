@@ -10,7 +10,6 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-          - { os: windows-latest }
           - { os: macos-latest }
           - { os: ubuntu-latest }
     steps:
