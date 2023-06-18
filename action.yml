@@ -1,0 +1,7 @@
+name: "Test cache"
+description: "Description"
+inputs:
+outputs:
+runs:
+  using: "node16"
+  main: "packed/index.js"
