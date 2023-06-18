@@ -20,7 +20,9 @@ async function run() {
   const found_cache_key = await cache.restoreCache(CACHE_PATHS, CACHE_KEY);
   core.info(`found_cache_key=${found_cache_key}`);
 
-  if (!found_cache_key) {
+  if (found_cache_key) {
+    core.info("Found match => do nothing");
+  } else {
     core.info("No match found in cache");
 
     fs.mkdirSync(CACHE_DIR);
