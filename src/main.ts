@@ -29,7 +29,8 @@ async function run() {
     fs.writeFileSync(`${CACHE_DIR}/text`, "hello!");
 
     core.info(`Caching ${CACHE_PATHS}.`);
-    await cache.saveCache(CACHE_PATHS, CACHE_KEY);
+    const saved_cache = await cache.saveCache(CACHE_PATHS, CACHE_KEY);
+    core.info(`saved_cache=${saved_cache}`);
   }
 }
 
