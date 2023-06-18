@@ -14,5 +14,6 @@ jobs:
           - { os: macos-latest }
           - { os: ubuntu-latest }
     steps:
+    - uses: actions/checkout@v3
     - uses: './action.yml'
 
