@@ -44,7 +44,8 @@ async function run() {
     core.info(`CACHE_DIR=${CACHE_DIR}`);
     core.info(`CACHE_KEY=${CACHE_KEY}`);
     const CACHE_PATHS = [CACHE_DIR];
-    const found_cache_key = await cache.restoreCache(CACHE_PATHS, CACHE_KEY);
+    const found_cache_key = await cache.restoreCache(Array.from(CACHE_PATHS), // Make an explicit copy for cache-version stability
+    CACHE_KEY);
     core.info(`found_cache_key=${found_cache_key}`);
     if (found_cache_key) {
         core.info("Found match => do nothing");
